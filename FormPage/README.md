@@ -1,3 +1,5 @@
+#To run the project, clone the repository and run command "ng serve -o".
+
 # FormPage
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
