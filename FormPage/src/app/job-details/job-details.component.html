@@ -1,0 +1,51 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <div class="container-fluid">
+            <div class="well-lg">Add Job Details</div>
+          </div>
+
+    <form [formGroup]="jobDetailForm" (ngSubmit)="onSubmit()" class="jobSubmissionFrom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-lg-5 ">
+                    <div class="form-group">
+                    <input type="text" formControlName="jobName" required placeholder="Job Name *" class="form-control" ><i class="fa fa-asterisk" aria-hidden="true"></i>    
+                </div>
+                </div>
+                <!-- <br><br><br> -->
+                <div class="col-sm-4 col-lg-5 offset-lg-2">
+                        <div class="form-group">
+                    <select class="custom-select"  formControlName="policyName" class="form-control">
+                        <option value="">--policy name-- *</option>
+                        <option *ngFor="let policy of Policy" [ngValue]="policy">{{policy}}</option>
+                    </select> 
+                </div>   
+                </div>
+            </div>
+                <!-- <br><br><br> -->
+            <div class="row">
+                <div class="col-sm-4 col-lg-5">
+                        <div class="form-group">
+                    <input type="date" class="form-control" formControlName="startDate" placeholder="Start Date *"      >
+                </div>
+            </div>
+                <!-- <br><br><br> -->
+                
+                <div class="col-sm-4 col-lg-5 offset-lg-2">
+                        <div class="form-group">
+                    <input type="text" class="form-control" formControlName="runInterval" placeholder="Run Interval">
+                </div>
+            </div>
+        </div>
+                
+            <div class="row" id="button">
+                <div class="col-lg-3">
+                        <button type="reset" class="btn btn-primary btn-xl ">Clear</button>
+                </div>
+                <div class="col-lg-3 offset-lg-2">
+                        <button type="submit" [disabled]="!jobDetailForm.valid" class="btn btn-primary btn-xl">Submit</button>
+                </div>
+            </div>
+    </div>
+    </form>
+    
